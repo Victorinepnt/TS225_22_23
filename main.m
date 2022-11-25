@@ -2,4 +2,4 @@ clear,
 close all,
 clc,
 
-img=imread()
+img=imread("./img/")
