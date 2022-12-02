@@ -1,19 +1,21 @@
 function [seuil] = AlgoOtsu(Sign,N)
 
+%Création de l'histogramme
 M=(-0.5:N);
 h = histcounts(Sign,M);
 len=length(h);
-% H=histogram(Sign,M);
-% %A=hiscounts(Sign,N);
 
-seuil=zeros(1,length(Sign));
+[A,Edges]=histcounts(Sign,M);
 
-%hc=cumsum(h) à utiliser pour Otsu pour pas de boucle for
+figure,
+plot(h),
+title("Histogramme");
 
+%seuil=zeros(1,length(Sign));
 
+%Calcul de crit
 hc=cumsum(h);
 hctot=hc(length(h));
-
 
 t=(1:length(h));
 hmul=t.*hc;
@@ -26,4 +28,6 @@ crit=w.*(n(N)-n).^2+(1-w).*n.^2;
 figure,
 plot(crit);
 
-seuil=max(crit);
+%Recherche de l'indice du maximum
+maxi=max(crit);
+seuil=find(crit==maxi);

@@ -20,8 +20,15 @@ nbEch=1000;
 %Segment
 
 Sign=Signature(x,y,img);
+figure
 
 %Seuillage
 Seuil=AlgoOtsu(Sign,N);
+SignS=zeros(1,length(Sign));
+SignS=Sign>Seuil;
+
+figure,
+plot(SignS),
+title("Signal seuiller")
 
 
