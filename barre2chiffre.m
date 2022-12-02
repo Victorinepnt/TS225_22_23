@@ -24,12 +24,13 @@ for i=2:12
     end
     calc = NewTab - mat;
     numligne = 1;
-    while(mat(numligne) ~= zeros(1, 7*factsurech))
+    while(numligne<31)
+        if(calc(numligne) ~= zeros(1, 7*factsurech))
+            break;
+        end
         numligne = numligne + 1;
     end
     chiffre(i) = convtab(numligne,8);
-    type(i) = convtav(numligne,9);
+    type(i) = convtab(numligne,9);
     j = j +7*factsurech;
 end
-
-type = A;
