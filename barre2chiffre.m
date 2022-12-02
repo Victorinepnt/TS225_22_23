@@ -1,6 +1,6 @@
-function [chiffre, type] = barre2chiffre(seq, factsurech)
+function [chiffre, type] = barre2chiffre(seq, factsurech, convtab)
 
 
 
-for i=1:30
-    
+chiffre = 3;
+type = A;    
