@@ -2,7 +2,7 @@ clear,
 close all,
 clc,
 
-img=imread("./Image/code_barre_lait.jpg");
+img=imread("./Image/haribo.jpg");
 figure,
 imshow(img);
 [h,w,z] = size(img);
@@ -29,5 +29,7 @@ SignS=1-(Sign>Seuil);
 figure,
 plot(SignS),
 title("Signal seuiller")
+
+%Calcul des nouvelles bornes 
 
 
