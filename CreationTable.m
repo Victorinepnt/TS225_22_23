@@ -35,135 +35,63 @@ for i=21:30
     Table(i,9) = 'C';   
 end
 
-Table(1,3) = 0;
-Table(1,4) = 1;
-Table(1,5) = 1;
-Table(1,6) = 0;
+Table(1,3:6) = [0 1 1 0];   %A0
 
-Table(2,3) = 1;
-Table(2,4) = 1;
-Table(2,5) = 0;
-Table(2,6) = 0;
+Table(2,3:6) = [1 1 0 0];   %A1
 
-Table(3,3) = 1;
-Table(3,4) = 0;
-Table(3,5) = 0;
-Table(3,6) = 1;
+Table(3,3:6) = [1 0 0 1];   %A2
 
-Table(4,3) = 1;
-Table(4,4) = 1;
-Table(4,5) = 1;
-Table(4,6) = 0;
+Table(4,3:6) = [1 1 1 0];   %A3
 
-Table(5,3:6) = [0 0 0 1];
+Table(5,3:6) = [0 0 0 1];   %A4
 
-Table(6,3:6) = [1 0 0 0];
+Table(6,3:6) = [1 0 0 0];   %A5
 
-Table(7,3:6) = [0 1 1 1];
+Table(7,3:6) = [0 1 1 1];   %A6
 
-Table(8,3:6) = [1 1 0 1] ;
+Table(8,3:6) = [1 1 0 1];   %A7
 
-Table(9,3:6 = [1 0 1 1];
+Table(9,3:6) = [1 0 1 1];   %A8
 
-Table(10,3:6) = [0 1 0 1];
+Table(10,3:6) = [0 1 0 1];  %A9
 
-Table(11,2) = 0;
-Table(11,3) = 0;
-Table(11,4) = 1;
-Table(11,5) = 1;
+Table(11,2:5) = [1 0 0 1];  %B0
 
-Table(12,2) = 0;
-Table(12,3) = 0;
-Table(12,4) = 1;
-Table(12,5) = 1;
+Table(12,2:5) = [1 1 0 0];  %B1
 
-Table(13,2) = 0;
-Table(13,3) = 0;
-Table(13,4) = 1;
-Table(13,5) = 1;
+Table(13,2:5) = [0 1 1 0];  %B2
 
-Table(14,2) = 0;
-Table(14,3) = 0;
-Table(14,4) = 1;
-Table(14,5) = 1;
+Table(14,2:5) = [1 0 0 0];  %B3
 
-Table(15,2) = 0;
-Table(15,3) = 0;
-Table(15,4) = 1;
-Table(15,5) = 1;
+Table(15,2:5) = [0 1 1 1];  %B4
 
-Table(16,2) = 0;
-Table(16,3) = 0;
-Table(16,4) = 1;
-Table(16,5) = 1;
+Table(16,2:5) = [1 1 1 0];  %B5
 
-Table(17,2) = 0;
-Table(17,3) = 0;
-Table(17,4) = 1;
-Table(17,5) = 1;
+Table(17,2:5) = [0 0 0 1];  %B6
 
-Table(18,2) = 0;
-Table(18,3) = 0;
-Table(18,4) = 1;
-Table(18,5) = 1;
+Table(18,2:5) = [0 1 0 0];  %B7
 
-Table(19,2) = 0;
-Table(19,3) = 0;
-Table(19,4) = 1;
-Table(19,5) = 1;
+Table(19,2:5) = [0 0 1 0];  %B8
 
-Table(20,2) = 0;
-Table(20,3) = 0;
-Table(20,4) = 1;
-Table(20,5) = 1;
+Table(20,2:5) = [0 1 0 1];  %B9
 
-Table(21,3) = 0;
-Table(21,4) = 1;
-Table(21,5) = 1;
-Table(21,6) = 0;
+Table(21,3:6) = [1 0 0 1];  %C0
 
-Table(22,3) = 0;
-Table(22,4) = 1;
-Table(22,5) = 1;
-Table(22,6) = 0;
+Table(22,3:6) = [0 0 1 1];  %C1
 
-Table(23,3) = 0;
-Table(23,4) = 1;
-Table(23,5) = 1;
-Table(23,6) = 0;
+Table(23,3:6) = [0 1 1 0];  %C2
 
-Table(24,3) = 0;
-Table(24,4) = 1;
-Table(24,5) = 1;
-Table(24,6) = 0;
+Table(24,3:6) = [0 0 0 1];  %C3
 
-Table(25,3) = 0;
-Table(25,4) = 1;
-Table(25,5) = 1;
-Table(25,6) = 0;
+Table(25,3:6) = [1 1 1 0];  %C4
 
-Table(26,3) = 0;
-Table(26,4) = 1;
-Table(26,5) = 1;
-Table(26,6) = 0;
+Table(26,3:6) = [0 1 1 1];  %C5
 
-Table(27,3) = 0;
-Table(27,4) = 1;
-Table(27,5) = 1;
-Table(27,6) = 0;
+Table(27,3:6) = [1 0 0 0];  %C6
 
-Table(28,3) = 0;
-Table(28,4) = 1;
-Table(28,5) = 1;
-Table(28,6) = 0;
+Table(28,3:6) = [0 0 1 0];  %C7
 
-Table(29,3) = 0;
-Table(29,4) = 1;
-Table(29,5) = 1;
-Table(29,6) = 0;
+Table(29,3:6) = [0 1 0 0];  %C8
 
-Table(30,3) = 0;
-Table(30,4) = 1;
-Table(30,5) = 1;
-Table(30,6) = 0;
+Table(30,3:6) = [1 0 1 0];  %C9
 
