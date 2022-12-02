@@ -24,6 +24,10 @@ Sign=Signature(x,y,img);
 %Seuillage
 Seuil=AlgoOtsu(Sign,N);
 SignS=zeros(1,length(Sign));
-%SignS=1
+SignS=1-(Sign>Seuil);
+
+figure,
+plot(SignS),
+title("Signal seuiller")
 
 
