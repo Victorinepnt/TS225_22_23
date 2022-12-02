@@ -26,3 +26,4 @@ Seuil=AlgoOtsu(Sign,N);
 SignS=zeros(1,length(Sign));
 %SignS=1
 
+
