@@ -2,7 +2,7 @@ clear,
 close all,
 clc,
 
-img=imread("./Image/code_barre_lait.jpg");
+img=imread("./Image/haribo.jpg");
 figure,
 imshow(img);
 [h,w,z] = size(img);
@@ -20,15 +20,39 @@ nbEch=1000;
 %Segment
 
 Sign=Signature(x,y,img);
-figure
 
 %Seuillage
 Seuil=AlgoOtsu(Sign,N);
 SignS=zeros(1,length(Sign));
-SignS=Sign>Seuil;
+SignS=1-(Sign>Seuil);
 
 figure,
 plot(SignS),
-title("Signal seuiller")
+title("Signal seuillé")
+
+%Calcul des nouvelles bornes 
+[A,B,fact]=recherche_borne(SignS,nbEch);
+Sign_borne=SignS(1,A:B);
+
+figure,
+subplot(2,1,1)
+plot(SignS);
+title("Signal avec les bornes")
+subplot(2,1,2)
+plot(Sign_borne)
+title("Signal sans les bornes")
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
 

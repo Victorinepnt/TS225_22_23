@@ -28,8 +28,31 @@ SignS=1-(Sign>Seuil);
 
 figure,
 plot(SignS),
-title("Signal seuiller")
+title("Signal seuillé")
 
 %Calcul des nouvelles bornes 
+[A,B,fact]=recherche_borne(SignS,nbEch);
+Sign_borne=SignS(1,A:B);
+
+figure,
+subplot(2,1,1)
+plot(SignS);
+title("Signal avec les bornes")
+subplot(2,1,2)
+plot(Sign_borne)
+title("Signal sans les bornes")
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
 
