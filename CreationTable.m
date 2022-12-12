@@ -1,4 +1,4 @@
-function Table = CreationTable()
+function [Table, Table2] = CreationTable()
 
 Table = zeros(30,9);
 for i=1:10
@@ -94,4 +94,40 @@ Table(28,3:6) = [0 0 1 0];  %C7
 Table(29,3:6) = [0 1 0 0];  %C8
 
 Table(30,3:6) = [1 0 1 0];  %C9
+
+
+%Création de la table pour le premier chiffre
+
+Table2 = zeros(10,7);
+Table2(:,1) = 'A';
+Table2(1,2:6) = 'A';
+Table2(1,7) = 0;
+
+Table2(2,2:6) = ['A' 'B' 'A' 'B' 'B'];
+Table2(2,7) = 1;
+
+Table2(3,2:6) = ['A' 'B' 'B' 'A' 'B'];
+Table2(3,7) = 2;
+
+Table2(4,2:6) = ['A' 'B' 'B' 'B' 'A'];
+Table2(4,7) = 3;
+
+Table2(5,2:6) = ['B' 'A' 'A' 'B' 'B'];
+Table2(5,7) = 4;
+
+Table2(6,2:6) = ['B' 'B' 'A' 'A' 'B'];
+Table2(6,7) = 5;
+
+Table2(7,2:6) = ['B' 'B' 'B' 'A' 'A'];
+Table2(7,7) = 6;
+
+Table2(8,2:6) = ['B' 'A' 'B' 'A' 'B'];
+Table2(8,7) = 7;
+
+Table2(9,2:6) = ['B' 'A' 'B' 'B' 'A'];
+Table2(9,7) = 8;
+
+Table2(10,2:6) = ['B' 'B' 'A' 'B' 'A'];
+Table2(10,7) = 9;
+
 
