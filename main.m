@@ -14,7 +14,7 @@ img=double(img);
 
 %Récupération des données sur la longueur
 N=256;
-nbEch=1000;
+nbEch=10000;
 [x,y]=recup_point(xA,yA,xB,yB,nbEch);
 
 %Segment
@@ -43,7 +43,12 @@ plot(Sign_borne)
 title("Signal sans les bornes")
 
 
+sizesur=floor(length(Sign_borne)/95);
+Test1=Surech(Sign_borne,Surech);
 
+figure,
+plot(Test1);
+title("Surechantillonné");
 
 
   

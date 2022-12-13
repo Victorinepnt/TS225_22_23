@@ -1,12 +1,12 @@
 function [coor_deb,coor_fin,size] = recherche_borne(Signal,nbEch)
 
-gardeNor=[1 0 1];
+%gardeNor=[1 0 1];
 
 size=floor(nbEch/95);
 
 %gardeNor=repelem(gardeNor,size)
 
-test=0;
+%test=0;
 
 %lenVer=length(gardeNor)-1;
 % for i=1:nbEch-lenVer
@@ -31,6 +31,19 @@ test=0;
 test=0;
 i=0;
 
+%size=1;
+% cpt=2;
+% while test==0
+%     if Signal(cpt)==1 & Signal()
+%         size=size+1;
+%     else
+%             test=1;
+%     end
+%     cpt=cpt+1;
+% end
+
+test=0;
+
 while test==0
     i=i+1;
     if Signal(i)==1
@@ -42,6 +55,7 @@ end
 test=0;
 i=0;
 Signal_inv=fliplr(Signal);
+
 
 while test==0
     i=i+1;
