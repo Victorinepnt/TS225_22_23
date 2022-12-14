@@ -30,12 +30,12 @@ for i=2:7
         mat(k,:) = ligne;
     end
     calc = NewTab - mat;
-    numligne = 1;
-    while(numligne<31)
+    numligne = 0;
+    while(numligne<30)
+        numligne = numligne + 1;
         if(calc(numligne,:) == zeros(1, 7*factsurech))
             break;
-        end
-        numligne = numligne + 1;
+        end  
     end
     chiffre(i) = convtab(numligne,8);
     type(i) = convtab(numligne,9);
@@ -87,8 +87,10 @@ treize = impair + 3*pair;
 verif = 10-mod(treize,10);
 if(verif == chiffre(13))
     res = 1;
+    "13ème chiffre correct"
 else
     res = 0;
+    "13ème chiffre incorrect"
 end
 
 

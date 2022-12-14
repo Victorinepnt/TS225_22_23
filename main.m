@@ -23,7 +23,7 @@ Sign=Signature(x,y,img);
 
 %Seuillage
 Seuil=AlgoOtsu(Sign,N);
-SignS=zeros(1,length(Sign));
+%SignS=zeros(1,length(Sign));
 SignS=1-(Sign>Seuil);
 
 figure,
@@ -46,13 +46,15 @@ title("Signal sans les bornes")
 
 sizesur=floor(length(Sign_borne)/95);
 
-Test1=Surech(Sign_borne,Surech);
+Test1=Surech(Sign_borne,sizesur);
 
 figure,
 plot(Test1);
 title("Surechantillonné");
 
+[TableConv1, TableConv2] = CreationTable();
 
+[chiffres, type, resultat] = barre2chiffre(Test1, sizesur, TableConv1, TableConv2);
   
 
 
