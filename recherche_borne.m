@@ -1,8 +1,9 @@
-function [coor_deb,coor_fin,size] = recherche_borne(Signal,nbEch)
+function [coor_deb,coor_fin,nvsize] = recherche_borne(Signal,nbEch)
 
 %gardeNor=[1 0 1];
 
-size=floor(nbEch/95);
+
+%size=floor(nbEch/95);
 
 %gardeNor=repelem(gardeNor,size)
 
@@ -31,16 +32,20 @@ size=floor(nbEch/95);
 test=0;
 i=0;
 
-%size=1;
-% cpt=2;
-% while test==0
-%     if Signal(cpt)==1 & Signal()
-%         size=size+1;
-%     else
-%             test=1;
-%     end
-%     cpt=cpt+1;
-% end
+nvsize=1;
+cpt=2;
+while test==0
+    if (Signal(cpt)==1)
+            nvsize=nvsize+1;
+    elseif (Signal(cpt)==0) && (Signal(cpt-1)==1)
+        
+        test=1;
+    end
+    
+    cpt=cpt+1;
+end
+
+nvsize=nvsize+floor(nvsize*5/100);
 
 test=0;
 
@@ -49,7 +54,7 @@ while test==0
     if Signal(i)==1
         test=1;
     end
-    coor_deb=i+3*size;
+    coor_deb=i+3*nvsize;
 end
 
 test=0;
@@ -62,7 +67,17 @@ while test==0
     if Signal_inv(i)==1
         test=1;
     end
-    coor_fin=length(Signal)-(i+3*size);
+    coor_fin=length(Signal)-(i+3*nvsize);
 end
 
-    
+% %Nouvelle idée:
+% SignS=Signal;
+% nvsize=3*floor(nvsize);
+% 
+% ajoutsize=(floor(length(SignS)/(nvsize))+1)*nvsize-10000;
+% 
+% SignS=[SignS zeros(1,ajoutsize)];
+% Test=reshape(SignS,3*nvsize,[]);
+% h=152*3;
+% w=length(SignS)/h;
+% Verif=ones(h,w);

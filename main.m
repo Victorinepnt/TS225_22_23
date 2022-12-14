@@ -31,6 +31,7 @@ plot(SignS),
 title("Signal seuillé")
 
 %Calcul des nouvelles bornes 
+
 [A,B,fact]=recherche_borne(SignS,nbEch);
 Sign_borne=SignS(1,A:B);
 
@@ -44,6 +45,7 @@ title("Signal sans les bornes")
 
 
 sizesur=floor(length(Sign_borne)/95);
+
 Test1=Surech(Sign_borne,Surech);
 
 figure,
