@@ -7,10 +7,6 @@ len=length(h);
 
 [A,Edges]=histcounts(Sign,M);
 
-figure,
-plot(h),
-title("Histogramme");
-
 %seuil=zeros(1,length(Sign));
 
 %Calcul de crit

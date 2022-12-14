@@ -45,7 +45,7 @@ while test==0
     cpt=cpt+1;
 end
 
-nvsize=nvsize+floor(nvsize*5/100);
+nvsize=nvsize+floor(nvsize*15/100);
 
 test=0;
 

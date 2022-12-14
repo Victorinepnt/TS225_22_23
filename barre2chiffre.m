@@ -29,7 +29,7 @@ for i=2:7
     for k=1:30
         mat(k,:) = ligne;
     end
-    calc = NewTab - mat;
+    calc = NewTab - mat
     numligne = 0;
     while(numligne<30)
         numligne = numligne + 1;
