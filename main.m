@@ -12,7 +12,7 @@ img=double(img);
 
 [xA,yA,xB,yB,L]=point_longueur();
 
-
+[chiffre, type, res] = Image2Code(img, xA, yA, xB, yB);
   
 
 

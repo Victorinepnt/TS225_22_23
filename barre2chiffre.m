@@ -19,24 +19,28 @@ end
 
 
 
-chiffre = zeros(13,1);
+chiffre = NaN(13,1);
 type = zeros(13,1);
 
 j=1;
 mat = zeros(30, 7*factsurech);
+X = zeros(30,1);
 for i=2:7
     ligne = seq(j:j+7*factsurech-1);
     for k=1:30
         mat(k,:) = ligne;
     end
     calc = NewTab - mat;
-    numligne = 0;
-    while(numligne<30)
-        numligne = numligne + 1;
-        if(calc(numligne,:) == zeros(1, 7*factsurech))
-            break;
-        end  
+    for l=1:30
+        X(l) = sum(calc(l,:)~=0);
     end
+    [mini,numligne] = min(X);
+%     while(numligne<30)
+%         numligne = numligne + 1;
+%         if(calc(numligne,:) == zeros(1, 7*factsurech))
+%             break;
+%         end  
+%     end
     chiffre(i) = convtab(numligne,8);
     type(i) = convtab(numligne,9);
     j = j +7*factsurech;
@@ -50,13 +54,16 @@ for i=8:13
         mat(k,:) = ligne;
     end
     calc = NewTab - mat;
-    numligne = 1;
-    while(numligne<30)
-        if(calc(numligne,:) == zeros(1, 7*factsurech))
-            break;
-        end
-        numligne = numligne + 1;
+    for l=1:30
+        X(l) = sum(calc(l,:)~=0);
     end
+    [mini,numligne] = min(X);
+%     while(numligne<30)
+%         if(calc(numligne,:) == zeros(1, 7*factsurech))
+%             break;
+%         end
+%         numligne = numligne + 1;
+%     end
     chiffre(i) = convtab(numligne,8);
     type(i) = convtab(numligne,9);
     j = j +7*factsurech;
@@ -66,18 +73,22 @@ end
 
 chiffre1 = type(2:7);
 mati = zeros(10,6);
+Y = zeros(10,1);
 for k=1:10
     mati(k,:) = chiffre1;
 end
 mat2 = convtab2(:,1:6);
 calc2 = mat2 - mati;
-numligne = 1;
-while(numligne<10)
-    if(calc2(numligne,:) == zeros(1,6))
-        break;
-    end
-    numligne = numligne + 1;
+for l=1:10
+        Y(l) = sum(calc2(l,:)~=0);
 end
+[mini,numligne] = min(Y);
+% while(numligne<10)
+%     if(calc2(numligne,:) == zeros(1,6))
+%         break;
+%     end
+%     numligne = numligne + 1;
+% end
 chiffre(1) = convtab2(numligne,7);
 
 %Vérification du 13ème chiffre
