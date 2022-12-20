@@ -53,15 +53,8 @@ plot(Test1);
 title("Surechantillonné");
 
 [TableConv1, TableConv2] = CreationTable();
-
-[chiffres, type, resultat] = barre2chiffre(Test1, sizesur, TableConv1, TableConv2);
+factsur = floor(length(Test1)/95);
+[chiffres, type, resultat] = barre2chiffre(Test1, factsur, TableConv1, TableConv2);
   
-
-
-
-
-
-
-
 
 
