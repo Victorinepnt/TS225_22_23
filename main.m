@@ -2,7 +2,7 @@ clear,
 close all,
 clc,
 
-img=imread("./Image/haribo.jpg");
+img=imread("./Image/2022-12-16 (3).png");
 figure,
 imshow(img);
 [h,w,z] = size(img);
@@ -44,7 +44,7 @@ plot(Sign_borne)
 title("Signal sans les bornes")
 
 
-sizesur=floor(length(Sign_borne)/95);
+%sizesur=floor(length(Sign_borne)/95);
 
 Test1=Surech(Sign_borne,fact);
 

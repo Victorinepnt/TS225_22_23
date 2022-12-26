@@ -7,7 +7,6 @@ len=length(h);
 
 [A,Edges]=histcounts(Sign,M);
 
-%seuil=zeros(1,length(Sign));
 
 %Calcul de crit
 hc=cumsum(h);

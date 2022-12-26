@@ -6,3 +6,4 @@ Y=YCbCr(:,:,1);
 
 figure,
 plot(Y);
+title("Signal")
