@@ -2,7 +2,7 @@ clear,
 close all,
 clc,
 
-img=imread("./Image/haribo.jpg");
+img=imread("./Image/Saintmichel.jpg");
 figure,
 imshow(img);
 [h,w,z] = size(img);
