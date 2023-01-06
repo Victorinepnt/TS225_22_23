@@ -1,4 +1,4 @@
-function [coor_deb,coor_fin,nvsize] = recherche_borne(Signal,nbEch)
+function [xdeb,xfin, nvl_size] = recherche_borne(Signal,nbEch)
 
 gardeNor=[1 0 1];
 
@@ -29,42 +29,31 @@ gardeNor=[1 0 1];
 % 
 % gardeNorMat=reshape(gardeNorligne,[],size);
 
-test=0;
-i=0;
-
-nvsize=1;
-cpt=2;
-while test==0
-    if (Signal(cpt)==1)
-            nvsize=nvsize+1;
-    elseif (Signal(cpt)==0) && (Signal(cpt-1)==1)
-        test=1;
-    end
-    cpt=cpt+1;
-end
+xdeb=2;
 
 test=0;
 
 while test==0
-    i=i+1;
-    if Signal(i)==1
-        test=1;
+    if (Signal(xdeb)==1)
+            test = 1;
     end
-    coor_deb=i+3*nvsize;
+    xdeb=xdeb+1;
 end
 
 test=0;
-i=0;
-Signal_inv=fliplr(Signal);
-
+xfin=length(Signal);
 
 while test==0
-    i=i+1;
-    if Signal_inv(i)==1
+    xfin=xfin-11;
+    if Signal(xfin)==1
         test=1;
     end
-    coor_fin=length(Signal)-(i+3*nvsize);
 end
+
+nvl_size = floor((xfin-xdeb)/95);
+
+xdeb = xdeb+3*nvl_size;
+xfin = xfin-3*nvl_size;
 
 % %Nouvelle idée:
 % SignS=Signal;

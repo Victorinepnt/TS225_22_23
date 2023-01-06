@@ -28,7 +28,7 @@ X = zeros(30,1);
 for i=2:7
     ligne = seq(j:j+7*factsurech-1);
     for k=1:30
-        mat(k,:) = ligne
+        mat(k,:) = ligne;
     end
     calc = NewTab - mat;
     for l=1:30
