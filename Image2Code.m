@@ -2,7 +2,7 @@ function [chiffres, type, res] = Image2Code(img, xA, yA, xB, yB)
 
 %Récupération des données sur la longueur
 N=256;
-nbEch=10000;
+nbEch=95*100+200;
 [x,y]=recup_point(xA,yA,xB,yB,nbEch);
 
 %Segment
@@ -41,4 +41,6 @@ title("Surechantillonné");
 [TableConv1, TableConv2] = CreationTable();
 factsurech = length(Test1)/89;
 
+
 [chiffres, type, res] = barre2chiffre(Test1,factsurech, TableConv1, TableConv2);
+

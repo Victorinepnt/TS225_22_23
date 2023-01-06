@@ -3,6 +3,7 @@ close all,
 clc,
 
 img=imread("./Image/Saintmichel.jpg");
+
 figure,
 imshow(img);
 [h,w,z] = size(img);
@@ -16,13 +17,12 @@ img=double(img);
 [xA,yA,xB,yB,L]=point_longueur();
 
 [chiffre, type, res] = Image2Code(img, xA, yA, xB, yB);
-  
+
 D = detection(y);
 
 figure,
 imshow(D);
 
-
-
+  
 
 
