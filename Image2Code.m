@@ -40,5 +40,5 @@ title("Surechantillonné");
 
 [TableConv1, TableConv2] = CreationTable();
 factsurech = length(Test1)/89;
-i = 1;
+
 [chiffres, type, res] = barre2chiffre(Test1,factsurech, TableConv1, TableConv2);

@@ -7,6 +7,9 @@ figure,
 imshow(img);
 [h,w,z] = size(img);
 
+ycbcr = rgb2ycbcr(img);
+y = ycbcr(:,:,1);
+
 %On passe l'image en double pour les calculs
 img=double(img);
 
@@ -14,10 +17,10 @@ img=double(img);
 
 [chiffre, type, res] = Image2Code(img, xA, yA, xB, yB);
   
+D = detection(y);
 
-
-
-
+figure,
+imshow(D);
 
 
 
