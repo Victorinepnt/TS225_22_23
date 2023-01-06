@@ -32,14 +32,13 @@ plot(Sign_borne)
 title("Signal sans les bornes")
 
 
-sizesur=floor(length(Sign_borne)/95);
-
-Test1=Surech(Sign_borne,sizesur);
+Test1=Surech(Sign_borne,fact);
 
 figure,
 plot(Test1);
 title("Surechantillonné");
 
 [TableConv1, TableConv2] = CreationTable();
-
-[chiffres, type, res] = barre2chiffre(Test1, sizesur, TableConv1, TableConv2);
+factsurech = length(Test1)/89;
+i = 1;
+[chiffres, type, res] = barre2chiffre(Test1,factsurech, TableConv1, TableConv2);
