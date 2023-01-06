@@ -1,0 +1,12 @@
+function[x,y]=bary(form)
+
+[h,w,z]=size(form);
+nbpoint=h*w;
+nvform=ycbcr2rgb(form);
+Y=nvform(:,:,1);
+sumtot=sum(sum(Y(:,:)));
+mean=floor(sumtot/nbpoint);
+[lis_x,lis_y]=find(Y==mean);
+x=1;
+y=1;
+
