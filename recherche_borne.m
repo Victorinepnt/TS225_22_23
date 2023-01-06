@@ -38,13 +38,10 @@ while test==0
     if (Signal(cpt)==1)
             nvsize=nvsize+1;
     elseif (Signal(cpt)==0) && (Signal(cpt-1)==1)
-
         test=1;
     end
     cpt=cpt+1;
 end
-
-nvsize=nvsize+floor(nvsize*15/100);
 
 test=0;
 
@@ -69,22 +66,22 @@ while test==0
     coor_fin=length(Signal)-(i+3*nvsize);
 end
 
-%Nouvelle idée:
-SignS=Signal;
-nvsize=3*floor(nvsize);
-
-test=floor(length(SignS)/nvsize)+1;
-ajoutsize=(test*nvsize)-length(SignS);
-
-SignS=[SignS zeros(1,ajoutsize)];
-Test=reshape(SignS,3*nvsize,[]);
-[h,w]=size(Test);
-Verif=ones(h,w);
-gardeNor=repelem(gardeNor,h);
-Verif=Verif.*gardeNor;
-
-
-Essaie=Test-Verif;
-SumEssaie=sum(Essaie)
+% %Nouvelle idée:
+% SignS=Signal;
+% nvsize=3*floor(nvsize);
+% 
+% test=floor(length(SignS)/nvsize)+1;
+% ajoutsize=(test*nvsize)-length(SignS);
+% 
+% SignS=[SignS zeros(1,ajoutsize)];
+% Test=reshape(SignS,3*nvsize,[]);
+% [h,w]=size(Test);
+% Verif=ones(h,w);
+% gardeNor=repelem(gardeNor,h);
+% Verif=Verif.*gardeNor;
+% 
+% 
+% Essaie=Test-Verif;
+% SumEssaie=sum(Essaie);
 
 

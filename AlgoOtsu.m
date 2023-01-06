@@ -1,4 +1,4 @@
-function [seuil] = AlgoOtsu(Sign,N)
+function [seuil,crit] = AlgoOtsu(Sign,N)
 
 %Création de l'histogramme
 M=(-0.5:N);
