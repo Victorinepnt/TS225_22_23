@@ -2,7 +2,7 @@ function [chiffres, type, res] = Image2Code(img, xA, yA, xB, yB)
 
 %Récupération des données sur la longueur
 N=256;
-nbEch=10000;
+nbEch=95*100+200;
 [x,y]=recup_point(xA,yA,xB,yB,nbEch);
 
 %Segment
@@ -34,12 +34,12 @@ title("Signal sans les bornes")
 
 sizesur=floor(length(Sign_borne)/95);
 
-Test1=Surech(Sign_borne,sizesur);
-
-figure,
-plot(Test1);
-title("Surechantillonné");
+%Test1=Surech(Sign_borne,sizesur);
+% 
+% figure,
+% plot(Test1);
+% title("Surechantillonné");
 
 [TableConv1, TableConv2] = CreationTable();
 
-[chiffres, type, res] = barre2chiffre(Test1, sizesur, TableConv1, TableConv2);
+[chiffres, type, res] = barre2chiffre(Sign_borne, sizesur, TableConv1, TableConv2);

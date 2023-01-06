@@ -2,7 +2,7 @@ clear,
 close all,
 clc,
 
-img=imread("./Image/haribo.jpg");
+img=imread("./Image/ean13.png");
 figure,
 imshow(img);
 [h,w,z] = size(img);
