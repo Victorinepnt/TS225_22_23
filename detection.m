@@ -1,37 +1,63 @@
-function region = detection(img)
+function D1 = detection(img)
 
 %Fonction qui détermine la région où se trouve le code barre
 sigma1 = 1.5;
-sigma2 = sigma1*95;
+sigma2 = sigma1*9;
 
-val = floor(3*sigma1)+1;
+val = sigma1*3;
 P = -val:val;
-[X,Y] = meshgrid(P,P);
+[X,Y] = meshgrid(P);
 
-Gx = -X/(2*pi*sigma1^4).*exp(-(X.^2+Y.^2)/(2*sigma1^2));
+Gx = -2*(X/(2*pi*sigma1^4)).*exp(-(X.^2+Y.^2)/(2*sigma1^2));
 
-Gy = -Y/(2*pi*sigma1^4).*exp(-(X.^2+Y.^2)/(2*sigma1^2));
+Gy = -2*(Y/(2*pi*sigma1^4)).*exp(-(X.^2+Y.^2)/(2*sigma1^2));
 
 Ix = conv2(img, Gx);
 Iy = conv2(img, Gy);
 
-DeltaI = [Ix, Iy];
-DeltaNI = DeltaI/norm(DeltaI);
+Ix = Ix/norm(Ix);
+Iy = Iy/norm(Iy);
 
-Wx = -X/(sqrt(2*pi)*sigma2^2).*exp(-(X.^2+Y.^2)/(2*sigma2^2));
+%DeltaI = [Ix, Iy];
+%DeltaNI = DeltaI/norm(DeltaI);
 
-Wy = -Y/(sqrt(2*pi)*sigma2^2).*exp(-(X.^2+Y.^2)/(2*sigma2^2));
+val2 = sigma2*3;
+P2 = -val2:val2;
+[X2,Y2] = meshgrid(P2);
 
-Txx = conv2(DeltaNI(:,1:1034).^2, Wx);
-Tyy = conv2(DeltaNI(:,1035:2068).^2, Wy);
+Wx = X2/(sqrt(2*pi)*sigma2^2).*exp(-(X2.^2+Y2.^2)/(2*sigma2^2));
 
-Txy = conv2(DeltaNI(:,1:1034).*DeltaNI(:,1035:2068), Wx*Wy);
+Wy = Y2/(sqrt(2*pi)*sigma2^2).*exp(-(X2.^2+Y2.^2)/(2*sigma2^2));
 
-D = sqrt(((Txx-Tyy).^2)+(4*Txy.^2))/(Txx + Tyy);
+Txx = conv2(Ix.^2, Wx.*Wx);
+Tyy = conv2(Iy.^2, Wy.*Wy);
 
-[h,w] = size(D);
+Txy = conv2(Ix.*Iy, Wx.*Wy);
 
-region = AlgoOtsu(D,h*w);
+D = sqrt(((Txx-Tyy).^2)+(4*Txy.^2))./(Txx + Tyy);
+
+figure,
+imshow(D);
+title("Contour");
+
+
+for i=1:length(D(1,:))
+    for j = 1:length(D(:,1))
+        if D(j,i) > 0.87 
+            D1(j,i) = 1;
+        else 
+            D1(j,i) =0;
+        end
+        
+    end
+end
+
+
+figure,
+imshow(D1);
+title("Région détectée");
+
+
 
 
 
