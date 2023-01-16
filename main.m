@@ -17,10 +17,15 @@ D = detection(Lumi);
 
 [y,x,form] = bary(D);
 
+R = rechercherayon(x,y,form);
+
 figure,
 imshow(form);
 hold on;
 plot(x,y, 'r+', 'MarkerSize', 15, 'LineWidth', 2);
+
+
+
 
 [chiffre, type, res] = Image2Code(Lumi, xA, yA, xB, yB);
 

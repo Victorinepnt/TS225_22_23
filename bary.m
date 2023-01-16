@@ -10,8 +10,8 @@ sumcol=sum(form');
 sumlig=sum(form);
 
 
-x=find(sumcol==max(sumcol));
+x=find(sumcol==min(sumcol));
 x=floor(mean(x));
-y=find(sumlig==max(sumlig));
+y=find(sumlig==min(sumlig));
 y=floor(mean(y));
 

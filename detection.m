@@ -43,10 +43,10 @@ title("Contour");
 
 for i=1:length(D(1,:))
     for j = 1:length(D(:,1))
-        if D(j,i) > 0.87 
-            D1(j,i) = 1;
+        if D(j,i) > 0.97 
+            D1(j,i) = 0;
         else 
-            D1(j,i) =0;
+            D1(j,i) =1;
         end
         
     end
