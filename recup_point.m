@@ -6,5 +6,5 @@ x=xA+(xi/(N-1))*(xB-xA);
 % yi=(1:N);
 % y=yA+(yi/(N-1))*(yB-yA);
 
-y=y(floor((yA+yB)/2));
+y=yA; %%(floor((yA+yB)/2));
 
