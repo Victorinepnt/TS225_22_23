@@ -53,9 +53,9 @@ for i=1:length(D(1,:))
 end
 
 
-figure,
-imshow(D1);
-title("Région détectée");
+% figure,
+% imshow(D1);
+% title("Région détectée");
 
 
 
