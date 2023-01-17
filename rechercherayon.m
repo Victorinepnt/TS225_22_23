@@ -1,4 +1,4 @@
-function [R] = rechercherayon(x,y, img)
+function [R,xg, xd] = rechercherayon(x,y, img)
 
 xg = x;
 xd = x;
